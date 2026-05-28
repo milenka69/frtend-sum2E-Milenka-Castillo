@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SaludPlus — Centro de Salud</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="#">SaludPlus</a>
+			<nav class="main-nav">
+				<a href="#especialidades">Especialidades</a>
+				<a href="#equipo">Equipo</a>
+				<a href="#obras">Obras Sociales</a>
+				<a href="#contacto" class="cta">Contacto</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container hero-inner">
+				<div class="hero-text">
+					<h1>SaludPlus</h1>
+					<p>Atención médica integral con enfoque humano y tecnológico.</p>
+					<p class="lead">Turnos rápidos, profesionales especializados y cobertura por las principales obras sociales.</p>
+					<a href="#contacto" class="btn-primary">Solicitar turno</a>
+				</div>
+				<div class="hero-visual" aria-hidden="true"></div>
+			</div>
+		</section>
+
+		<section id="especialidades" class="section container">
+			<h2>Especialidades</h2>
+			<p class="section-sub">Cobertura amplia para todas las edades.</p>
+			<div class="grid specialties">
+				<article class="card">
+					<h3>Medicina General</h3>
+					<p>Atención primaria, chequeos preventivos y manejo de patologías crónicas.</p>
+				</article>
+				<article class="card">
+					<h3>Pediatría</h3>
+					<p>Controles del niño sano, vacunación y seguimiento del desarrollo.</p>
+				</article>
+				<article class="card">
+					<h3>Ginecología</h3>
+					<p>Controles ginecológicos, planificación familiar y seguimiento obstétrico.</p>
+				</article>
+				<article class="card">
+					<h3>Cardiología</h3>
+					<p>Diagnóstico y tratamiento de enfermedades cardiovasculares.</p>
+				</article>
+				<article class="card">
+					<h3>Traumatología</h3>
+					<p>Atención en lesiones, rehabilitación y cirugías programadas.</p>
+				</article>
+				<article class="card">
+					<h3>Dermatología</h3>
+					<p>Diagnóstico y tratamiento de afecciones de la piel.</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="equipo" class="section container">
+			<h2>Nuestro Equipo</h2>
+			<p class="section-sub">Profesionales calificados dedicados a tu cuidado.</p>
+			<div class="grid team">
+				<figure class="team-card">
+					<img src="https://via.placeholder.com/160" alt="Dra. Ana Pérez">
+					<figcaption>
+						<strong>Dra. Ana Pérez</strong>
+						<span>Pediatra</span>
+					</figcaption>
+				</figure>
+				<figure class="team-card">
+					<img src="https://via.placeholder.com/160" alt="Dr. Martín Gómez">
+					<figcaption>
+						<strong>Dr. Martín Gómez</strong>
+						<span>Cardiólogo</span>
+					</figcaption>
+				</figure>
+				<figure class="team-card">
+					<img src="https://via.placeholder.com/160" alt="Dra. Lucía Torres">
+					<figcaption>
+						<strong>Dra. Lucía Torres</strong>
+						<span>Ginecóloga</span>
+					</figcaption>
+				</figure>
+				<figure class="team-card">
+					<img src="https://via.placeholder.com/160" alt="Dr. Juan Ramírez">
+					<figcaption>
+						<strong>Dr. Juan Ramírez</strong>
+						<span>Traumatólogo</span>
+					</figcaption>
+				</figure>
+			</div>
+		</section>
+
+		<section id="obras" class="section container">
+			<h2>Obras Sociales y Prepagas</h2>
+			<p class="section-sub">Trabajamos con las principales coberturas del país.</p>
+			<ul class="insurers">
+				<li>OSDE</li>
+				<li>Swiss Medical</li>
+				<li>Galeno</li>
+				<li>PAMI</li>
+				<li>MedicCare</li>
+				<li>Otros Planes Provinciales</li>
+			</ul>
+		</section>
+
+		<section id="contacto" class="section container contact-section">
+			<h2>Contacto</h2>
+			<div class="contact-grid">
+				<div>
+					<p><strong>Dirección:</strong> Av. Salud 1234, Ciudad</p>
+					<p><strong>Teléfono:</strong> (011) 1234-5678</p>
+					<p><strong>Horarios:</strong> Lun-Vie 8:00 – 19:00</p>
+				</div>
+				<form class="contact-form" action="#" method="post" novalidate>
+					<label>
+						Nombre
+						<input type="text" name="nombre" required>
+					</label>
+					<label>
+						Teléfono / Email
+						<input type="text" name="contacto" required>
+					</label>
+					<label>
+						Mensaje
+						<textarea name="mensaje" rows="4"></textarea>
+					</label>
+					<button type="submit" class="btn-secondary">Enviar</button>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<small>© 2026 SaludPlus — Centro de Salud. Todos los derechos reservados.</small>
+			<nav class="footer-nav">
+				<a href="#politicas">Políticas</a>
+				<a href="#privacidad">Privacidad</a>
+			</nav>
+		</div>
+	</footer>
+
+	<script src="js/validaciones.js"></script>
+</body>
+</html>
+

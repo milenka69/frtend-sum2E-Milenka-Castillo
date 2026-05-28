@@ -1,0 +1,72 @@
+/* Reset y base */
+:root{
+	--bg:#f7fbfd;
+	--card:#ffffff;
+	--muted:#6b7280;
+	--accent:#0f766e;
+	--accent-2:#0369a1;
+	--max-width:1100px;
+	--radius:10px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#0f172a}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 18px}
+
+/* Header */
+.site-header{background:#ffffff;border-bottom:1px solid #e6eef2}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{font-weight:700;color:var(--accent-2);text-decoration:none;font-size:1.25rem}
+.main-nav a{margin-left:18px;color:var(--muted);text-decoration:none}
+.main-nav a.cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#e6fffa, #f0f9ff);padding:48px 0}
+.hero-inner{display:flex;gap:24px;align-items:center}
+.hero-text{flex:1}
+.hero-text h1{margin:0;font-size:2.2rem;color:var(--accent-2)}
+.hero-text p{margin:12px 0;color:var(--muted)}
+.lead{font-weight:600;color:#0f172a}
+.btn-primary{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
+.hero-visual{width:320px;height:200px;background:linear-gradient(180deg, #dff6f3,#dceffd);border-radius:12px}
+
+/* Sections */
+.section{padding:36px 0}
+.section h2{margin:0 0 6px 0;color:var(--accent-2)}
+.section-sub{margin:0 0 18px 0;color:var(--muted)}
+
+.grid{display:grid;gap:16px}
+.specialties{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+
+.team{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.team-card{background:var(--card);padding:14px;border-radius:12px;text-align:center}
+.team-card img{width:100%;height:auto;border-radius:8px}
+.team-card figcaption{margin-top:10px;color:var(--muted)}
+
+.insurers{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:12px 0}
+.insurers li{background:var(--card);padding:10px 14px;border-radius:8px;box-shadow:0 4px 10px rgba(15,23,42,0.04)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.contact-form{display:grid;gap:10px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border:1px solid #e6eef2;border-radius:8px}
+.btn-secondary{background:#fff;border:1px solid var(--accent-2);color:var(--accent-2);padding:10px 14px;border-radius:8px}
+
+/* Footer */
+.site-footer{background:#fff;border-top:1px solid #e6eef2;padding:18px 0;margin-top:28px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+.footer-nav a{margin-left:12px;color:var(--muted);text-decoration:none}
+
+/* Responsive */
+@media (max-width:900px){
+	.hero-inner{flex-direction:column;text-align:center}
+	.hero-visual{width:220px;height:140px}
+	.contact-grid{grid-template-columns:1fr}
+	.header-inner{padding:12px 0}
+	.main-nav a{margin-left:12px}
+}
+
+@media (max-width:480px){
+	.hero-text h1{font-size:1.6rem}
+	.brand{font-size:1rem}
+}
+
