@@ -1,5 +1,10 @@
 /* Estilos específicos para la página turnos */
 
+.campo-error{border:1px solid #c62828 !important;background:#ffebee !important}
+.campo-ok{border:1px solid #2e7d32 !important;background:#e8f5e9 !important}
+.mensaje-error{color:#c62828;font-size:0.9rem;margin-top:0.25rem;display:none}
+.confirmacion-exito{margin-top:18px;padding:16px;border-radius:12px;background:#e8f5e9;border:1px solid #2e7d32;color:#1b5e20}
+
 /* Centrar y espaciar el formulario (redundancia segura con styles.css) */
 .contact-form{max-width:800px;margin:18px auto;padding:0 12px}
 
