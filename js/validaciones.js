@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	const planLabel = document.getElementById('planLabel');
 	const turnoForm = document.getElementById('turnoForm');
 	const primeraVisita = document.getElementById('primeraVisita');
-	const conocioLabel = document.getElementById('conocioLabel');
+	const conocioGroup = document.getElementById('conocioGroup');
+	const conocio = document.getElementById('conocio');
 	const estudiosPrevios = document.getElementById('estudiosPrevios');
-	const descEstudiosLabel = document.getElementById('descEstudiosLabel');
+	const descEstudiosGroup = document.getElementById('descEstudiosGroup');
+	const descEstudios = document.getElementById('descEstudios');
 
 	const medicosPorEspecialidad = {
 		'Clínica General': ['Dr. Carlos Ruiz','Dra. Marta López'],
@@ -101,16 +103,19 @@ document.addEventListener('DOMContentLoaded', function () {
 	planLabel.classList.add('hidden');
 	document.getElementById('plan').classList.add('hidden');
 	document.getElementById('plan').disabled = true;
+	conocioGroup.classList.add('hidden');
+	conocio.disabled = true;
+	descEstudiosGroup.classList.add('hidden');
+	descEstudios.disabled = true;
 
 	// Primera visita / Cómo nos conoció
 	primeraVisita.addEventListener('change', function () {
-		const conocio = document.getElementById('conocio');
 		if (primeraVisita.checked) {
-			conocioLabel.classList.remove('hidden');
+			conocioGroup.classList.remove('hidden');
 			conocio.disabled = false;
 			conocio.setAttribute('required','');
 		} else {
-			conocioLabel.classList.add('hidden');
+			conocioGroup.classList.add('hidden');
 			conocio.removeAttribute('required');
 			conocio.value = '';
 			conocio.disabled = true;
@@ -119,16 +124,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Estudios previos
 	estudiosPrevios.addEventListener('change', function () {
-		const desc = document.getElementById('descEstudios');
 		if (estudiosPrevios.checked) {
-			descEstudiosLabel.classList.remove('hidden');
-			desc.disabled = false;
-			desc.setAttribute('required','');
+			descEstudiosGroup.classList.remove('hidden');
+			descEstudios.disabled = false;
+			descEstudios.setAttribute('required','');
 		} else {
-			descEstudiosLabel.classList.add('hidden');
-			desc.removeAttribute('required');
-			desc.value = '';
-			desc.disabled = true;
+			descEstudiosGroup.classList.add('hidden');
+			descEstudios.removeAttribute('required');
+			descEstudios.value = '';
+			descEstudios.disabled = true;
 		}
 	});
 
@@ -156,18 +160,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		planLabel.classList.add('hidden');
 		document.getElementById('plan').classList.add('hidden');
 		document.getElementById('plan').disabled = true;
-		conocioLabel.classList.add('hidden');
-		document.getElementById('conocio').classList.add('hidden');
-		document.getElementById('conocio').disabled = true;
-		descEstudiosLabel.classList.add('hidden');
-		document.getElementById('descEstudios').classList.add('hidden');
-		document.getElementById('descEstudios').disabled = true;
+		conocioGroup.classList.add('hidden');
+		conocio.disabled = true;
+		descEstudiosGroup.classList.add('hidden');
+		descEstudios.disabled = true;
 		// remove required attributes that may have been set
 		document.getElementById('plataforma').removeAttribute('required');
 		document.getElementById('numeroCredencial').removeAttribute('required');
 		document.getElementById('plan').removeAttribute('required');
-		document.getElementById('conocio').removeAttribute('required');
-		document.getElementById('descEstudios').removeAttribute('required');
+		conocio.removeAttribute('required');
+		descEstudios.removeAttribute('required');
 	}
 
 	turnoForm.addEventListener('reset', function () {

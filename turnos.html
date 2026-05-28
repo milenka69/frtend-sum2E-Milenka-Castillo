@@ -127,30 +127,36 @@
       </fieldset>
       <fieldset>
         <legend>Sección 4: Información Adicional</legend>
-        <label for="primeraVisita" class="checkbox-row">
-          <input type="checkbox" id="primeraVisita" name="primeraVisita">
-          Es la primera vez que consulta en SaludPlus
-        </label>
-
-        <label for="conocio" id="conocioLabel" class="hidden full-width">¿Cómo nos conoció?</label>
-        <select id="conocio" name="conocio" class="hidden full-width" disabled>
-          <option value="">Seleccione...</option>
-          <option>Búsqueda en internet</option>
-          <option>Recomendación de un conocido</option>
-          <option>Redes sociales</option>
-          <option>Otro</option>
-        </select>
+        <div class="form-block full-width">
+          <label for="primeraVisita" class="checkbox-row">
+            <input type="checkbox" id="primeraVisita" name="primeraVisita">
+            Es la primera vez que consulta en SaludPlus
+          </label>
+          <div id="conocioGroup" class="hidden full-width">
+            <label for="conocio">¿Cómo nos conoció?</label>
+            <select id="conocio" name="conocio" disabled>
+              <option value="">Seleccione...</option>
+              <option>Búsqueda en internet</option>
+              <option>Recomendación de un conocido</option>
+              <option>Redes sociales</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
 
         <label for="motivo" class="full-width">Motivo de consulta</label>
         <textarea placeholder="Describa brevemente el motivo de la consulta" name="motivo" id="motivo" rows="4" required class="full-width"></textarea>
 
-        <label for="estudiosPrevios" class="checkbox-row">
-          <input type="checkbox" id="estudiosPrevios" name="estudiosPrevios">
-          Tiene estudios previos relacionados con la consulta
-        </label>
-
-        <label for="descEstudios" id="descEstudiosLabel" class="hidden full-width">Descripción de estudios</label>
-        <textarea id="descEstudios" name="descEstudios" rows="3" class="hidden full-width" disabled placeholder="Resumen de estudios realizados"></textarea>
+        <div class="form-block full-width">
+          <label for="estudiosPrevios" class="checkbox-row">
+            <input type="checkbox" id="estudiosPrevios" name="estudiosPrevios">
+            Tiene estudios previos relacionados con la consulta
+          </label>
+          <div id="descEstudiosGroup" class="hidden full-width">
+            <label for="descEstudios">Descripción de estudios</label>
+            <textarea id="descEstudios" name="descEstudios" rows="3" disabled placeholder="Resumen de estudios realizados"></textarea>
+          </div>
+        </div>
       </fieldset>
 
       <div class="form-actions">
