@@ -1,0 +1,264 @@
+Etapa 1 
+
+prompt 1
+"Necesito desarrollar la pgina principal de un centro de salud llamado "SaludPlus". este debe presentarse de forma profesional, con información de las especialidades médicas, el equipo de rpofesioanles y obras sociales aceptadas."
+
+respuesta:
+GitHub inicio un plan con una estructura básica y sin diseño, aceptable como para empezar a desarrollarlo. 
+
+hizo una sencilla, sin diseño, con diferentes tamaño de letras y secciones.
+
+prompt 2
+"ahora mejoraremos la estética y distribución, el header tengo de logo o nombre "SaludPlus", con menú de navegación a cada seción de la pagina (inicio, especialidades, médicos, obras sociales y contacto), el menú debe permanecer visible al hacer scroll. la sección hero debe tener imagen de fondo un color con degradado, titulo principal, subtitulo descriptivo, un botón de llamada a la accion "Solicitar turno" y que redirija a turnos.html y finalmente indicadores de confianza: al menos 3 datos destacados (ej. cantidad de especialidades, anos de 
+experiencia, pacientes atendidos)."
+
+respuesta:
+Voy a actualizar index.html y styles.css para hacer el header sticky, actualizar el menú, añadir hero con fondo y CTA a turnos.html, y agregar los indicadores de confianza.
+
+le agrego más estética y orden a la página, con color degradado, secciones mejor visibles y atrayentes a la vista, sin embargo, no redireccionó a turnos.html y agrego un formulario al final de la pagina principal.
+
+prompt 3 
+"redireciona el botón "Solicitar turno" al archivo turnos.html"
+
+respuesta:
+Creo turnos.html con un formulario de solicitud de turno y enlace al estilo existente.
+
+se pidió arreglar aquel error de dirección y se realiza con éxito.
+
+prompt 4
+"ahora vamos a continuar con index.html:
+Especialidades Medicas: Grilla con al menos 6 especialidades disponibles (ej. Clinica General, Cardiologia, Pediatria, 
+Ginecologia, Traumatologia, Neurologia). Tambien cada especialidad debe mostrar un icono o imagen representativa, nombre y breve descripcion. Ademas, Layout implementado con CSS Grid (minimo 3 columnas en pantallas grandes). 
+Nuestros Medicos: Seccion con al menos 3 profesionales del equipo medico. Cada tarjeta debe incluir: nombre completo, especialidad, breve descripcion o frase. Placeholder de imagen (puede ser un div con fondo de color o imagen generica) y finalmente Layout con Flexbox. 
+Obras Sociales: Lista o grilla con al menos 6 obras sociales y/o prepagas aceptadas (ej. OSDE, Swiss Medical, 
+Galeno, IOMA, Medicus, Sancor Salud). Presentacion clara con nombre de cada cobertura. 
+Contacto y Footer: Datos de contacto: direccion, telefono, email, horario de atencion. Mapa placeholder (un div con texto o imagen representativa). Footer con derechos reservados y nombre del autor."
+
+Respuesta:
+Voy a actualizar index.html y styles.css: añadir iconos y descripciones en especialidades, cambiar sección de equipo a #medicos con layout Flexbox, ajustar obras sociales, añadir email y mapa placeholder, y adaptar CSS Grid/Flexbox.
+
+se modifico información para condordar con lo solicitado, su función fue perfecta y todo permanece con un buen estilo.
+
+
+prompt 5:
+"tengo ciertos requisitos para css, puedes ver si estas ya están? si no, modifica.
+Usar CSS Grid para la seccion de Especialidades. 
+• Usar Flexbox para el header y la seccion de Medicos. 
+• Paleta de colores coherente y profesional, acorde a un sitio medico. 
+• Fuentes legibles; se puede usar Google Fonts (max. 2 familias). 
+• El sitio debe verse correctamente en pantallas de al menos 1024px de ancho."
+
+respuesta:
+Reviso y ajustaré styles.css para garantizar Grid en Especialidades y Flexbox en header/medicos, y asegurar 3 columnas en pantallas >=1024px.
+
+No hubo mucho cambio debido a que lo demás se mantenía en orden, según lo solicitado.
+
+
+Etapa 2:
+promtp 1
+"Inicia con la sección de formulario en turnos.html con los siguientes requisitos. Seccion 1: Datos del Paciente 
+Campos requeridos: 
+Nombre (type="text") 
+Apellido (type="text") 
+DNI (type="text") 
+Correo electronico (type="email") 
+Telefono (type="tel") 
+Fecha de nacimiento (type="date") 
+Genero (select): Masculino / Femenino / Otro / Prefiero no especificar 
+Seccion 2: Datos del Turno 
+Campos requeridos: 
+Especialidad (select): Clinica General, Cardiologia, Pediatria, Ginecologia, Traumatologia, 
+Neurologia.  
+Medico (select): Las opciones deben cambiar segun la especialidad seleccionada. Incluye al menos 
+2 medicos por especialidad. Este campo se habilita solo cuando hay una especialidad seleccionada. 
+Tipo de consulta (select): Primera consulta / Control / Resultado de estudios. 
+Fecha del turno (type="date"). 
+Hora del turno (type="time"). 
+Modalidad (select): Presencial / Videoconsulta.  Plataforma preferida (select): Zoom / Google Meet / Teams. VISIBLE SOLO si la modalidad es 
+"Videoconsulta". 
+Seccion 3: Cobertura Medica 
+Campos requeridos: 
+Cobertura (select): OSDE / Swiss Medical / Galeno / IOMA / Medicus / Sancor Salud / Particular. 
+Numero de credencial (type="text"): VISIBLE SOLO si la cobertura NO es "Particular". 
+Plan (type="text"): VISIBLE SOLO si la cobertura NO es "Particular"."
+
+respuesta:
+Voy a editar turnos.html para reemplazar el formulario por el formulario detallado y añadir JavaScript en validaciones.js para controlar la lógica condicional (habilitar médicos por especialidad, mostrar campos según modalidad y cobertura). Luego probaré la integración básica.
+
+Se creo y edito un formulario con divisiones y secciones para cada información, estetica bonita y acorde a la situación.
+
+
+prompt 2
+"Finalmente continua con esto:
+Seccion 4: Informacion Adicional 
+Campos requeridos:  
+Primera visita (type="checkbox"): "Es la primera vez que consulta en SaludPlus". Al marcar esta 
+opcion, se muestra el campo "Como nos conocio". 
+Como nos conocio (select): Busqueda en internet / Recomendacion de un conocido / Redes 
+sociales / Otro. VISIBLE SOLO si el checkbox anterior esta marcado. 
+Motivo de consulta (textarea, rows="4"): Descripcion del motivo de la consulta. 
+Estudios previos (type="checkbox"): "Tiene estudios previos relacionados con la consulta". Al 
+marcar esta opcion, se muestra el campo "Descripcion de estudios". 
+Descripcion de estudios (textarea, rows="3"): VISIBLE SOLO si el checkbox anterior esta marcado. 
+Boton de envio 
+• Boton type="submit" con texto "Solicitar Turno". 
+• Boton type="reset" con texto "Limpiar formulario"."
+
+respuesta:
+Actualizaré turnos.html para añadir la Sección 4 y botones de envío/limpieza, y luego actualizaré validaciones.js para manejar la lógica condicional y el comportamiento del reset. Haré ambos cambios juntos.
+
+se agrega la sección solicitada con su función, sin embargo, hay ciertos errores que hay que corregir como poder seleccionar medico después de la especialidad, ya que al realizarlo no funciona.
+
+prompt 3
+"tengo ciertos requisitos para el estilo y la estructura HTML de turnos:
+Requisitos de estructura HTML 
+• Cada campo debe tener su etiqueta <label> con el atributo for correspondiente. 
+• Los grupos de campos deben estar dentro de <fieldset> con su respectivo <legend>. 
+• Usar los tipos de input correctos (email, tel, date, time, text, checkbox). 
+• Agregar atributo placeholder descriptivo donde corresponda. 
+• Los campos de la Seccion 2 que dependen de la especialidad deben usar el atributo disabled y 
+cambiar a enabled con JavaScript. 
+Requisitos de estilos 
+• Formulario centrado en pantalla, con ancho maximo de 800px. 
+• Cada seccion (fieldset) debe tener estilos visuales diferenciados (borde, fondo suave). 
+• Los campos ocultos deben tener display: none; por defecto en CSS. 
+• Aplicar estilos de hover y focus en los campos del formulario."
+
+respuesta:
+Voy a actualizar turnos.html, styles.css y validaciones.js para cumplir los requisitos de estructura y estilo del formulario: etiquetas for, placeholders, campos dependientes disabled, estilos de fieldset, centrado del formulario, campos ocultos con la clase .hidden, y efectos hover/focus. Luego pruebo la lógica JS para habilitar/mostrar campos condicionales.
+
+se modifico el formulario según lo solicitado, arreglando secciones donde la visualidad era mala o distribución, sin embargo aun permanecen errores que se deben arreglar.
+
+
+prompt 4
+"Arregla errores del formulario como validaciones mal hechas, selecciones y espacios de texto inoperables o faltantes, distribuciones que se vean mal a la vista, etc. cada uno en su archivo."
+
+respuesta:
+Voy a añadir estilos específicos de formulario en turnos.css y actualizar turnos.html para incluirlos; también haré pequeños ajustes de JS si es necesario. Esto organiza correcciones por archivo como pediste.
+
+se hacen arreglos significativos, además de un orden mejor a la vista, exceptuando la sección 4 que no se comprende muy bien.
+
+prompt 5
+"la sección 4: información adicional, no se entiende bien su estilo, se ve desordenado e intendible. puedes arreglarlo?"
+
+respuesta:
+✅ Sección 4 arreglada
+He mejorado el estilo de turnos.html y turnos.css para que la sección 4 luzca ordenada y clara.
+
+Se mejora notablemente la cuarta sección, siendo mucho más entendible y ordenado.
+
+prompt 6
+"arregla los cuadro de textos faltantes de la sección 4, que aparecen luego de checkbox."
+
+respuesta:
+He corregido la sección 4 para que los cuadros de texto ocultos funcionen bien:
+
+Agrupé cada checkbox con su campo dependiente en bloques form-block.
+Dejé conocio y descEstudios ocultos con el wrapper hidden en lugar de ocultar el campo individual.
+Ajusté el JS en validaciones.js para mostrar/ocultar conocioGroup y descEstudiosGroup correctamente.
+Eliminé la lógica que escondía los inputs individuales y que causaba conflicto visual.
+Ahora la sección 4 debe verse ordenada y los campos adicionales aparecen correctamente después de activar los checkboxes.
+
+Se arreglo por completo la sección 4, siendo ordenado y completamente funcional.
+
+
+
+etapa 3
+prompt 1
+"mejora o arregla las validaciones según lo que solicito:
+Clases CSS para feedback visual 
+Define en turnos.css las siguientes clases y aplicalas desde JavaScript: 
+• campo-error: borde rojo, fondo rojo muy claro. Indica que el campo tiene un error. 
+• campo-ok: borde verde, fondo verde muy claro. Indica que el campo es valido. 
+• mensaje-error: texto de error pequeno de color rojo, visible debajo del campo. 
+Reglas de validacion por campo 
+Seccion 1 - Datos del paciente 
+• Nombre y Apellido: obligatorio, solo letras y espacios (incluye tildes y ene). Expresion regular 
+sugerida: /^[a-zA-ZaeiouAEIOUuUnnNN\s]+$/ 
+• DNI: obligatorio, entre 7 y 8 digitos numericos. 
+• Email: obligatorio, formato valido (usar expresion regular). 
+• Telefono: obligatorio, formato valido (puede contener +, guiones y espacios, minimo 8 digitos). 
+• Fecha de nacimiento: obligatoria, no puede ser una fecha futura, la edad debe estar entre 0 y 120 
+anos. 
+Seccion 2 - Datos del turno 
+• Especialidad: obligatoria (no puede quedar en la opcion vacia inicial). 
+• Medico: obligatorio una vez que la especialidad esta seleccionada. Las opciones del select deben 
+actualizarse dinamicamente al cambiar la especialidad, usando un objeto JavaScript con los 
+medicos de cada especialidad. 
+• Tipo de consulta: obligatorio. 
+• Fecha del turno: obligatoria, no puede ser una fecha pasada, debe tener al menos 24 horas de 
+anticipacion desde el momento actual, y debe corresponder a un dia de semana (lunes a viernes; 
+rechazar sabados y domingos). 
+• Hora del turno: obligatoria, debe estar dentro del horario de atencion (08:00 a 20:00). 
+• Modalidad: obligatoria. 
+• Plataforma preferida: obligatoria si la modalidad es "Videoconsulta". 
+Seccion 3 - Cobertura medica 
+• Cobertura: obligatoria. 
+Pagina 7 de 10 
+Evaluacion Sumativa 2  |  Programacion Web  |  SaludPlus 
+• Numero de credencial: obligatorio si la cobertura NO es "Particular". Debe tener al menos 5 
+caracteres alfanumericos. 
+• Plan: obligatorio si la cobertura NO es "Particular". 
+Seccion 4 - Informacion adicional 
+• Como nos conocio: obligatorio si el checkbox de primera visita esta marcado. 
+• Motivo de consulta: obligatorio, minimo 20 caracteres. 
+• Descripcion de estudios: obligatoria si el checkbox de estudios previos esta marcado; minimo 20 
+caracteres. 
+Comportamiento del formulario 
+Campos condicionales 
+Los siguientes campos deben mostrarse y ocultarse dinamicamente mediante JavaScript (modificando 
+display: none / display: block): 
+• Medico: se habilita y actualiza sus opciones cuando el usuario selecciona una especialidad. 
+• Plataforma preferida: se muestra solo cuando la modalidad seleccionada es "Videoconsulta". 
+• Numero de credencial y Plan: se muestran cuando la cobertura es distinta de "Particular". 
+• Como nos conocio: se muestra cuando el checkbox de primera visita esta marcado. 
+• Descripcion de estudios: se muestra cuando el checkbox de estudios previos esta marcado. 
+Manejo del submit 
+• Usar preventDefault() para evitar el envio del formulario por defecto. 
+• Recorrer todos los campos y aplicar campo-error o campo-ok segun corresponda. 
+• Si existe al menos un error, usar element.scrollIntoView({ behavior: "smooth" }) para desplazarse al 
+primer campo invalido. 
+• Si todos los campos son validos, mostrar un mensaje de confirmacion en pantalla con un numero de 
+turno generado con Math.random() (formato: TURN-XXXXX, donde X son digitos). 
+• El mensaje de confirmacion debe incluir: nombre del paciente, especialidad, fecha y hora del turno, 
+y el numero de turno generado."
+
+respuesta:
+Reviso el formulario y los estilos actuales para implementar validaciones y feedback visual consistente
+
+se hace revisión y validaciones de forma correcta.
+
+
+prompt 2
+"Objeto de medicos por especialidad 
+Define en validaciones.js un objeto JavaScript con la siguiente estructura (completa con al menos 2 medicos 
+por especialidad): 
+const medicosPorEspecialidad = { 
+"clinica": ["Dr. Gomez, Carlos", "Dra. Lopez, Maria"], 
+"cardiologia": ["Dr. Perez, Juan", "Dra. Torres, Ana"], 
+"pediatria": ["Dra. Diaz, Laura", "Dr. Soto, Pablo"], 
+"ginecologia": ["Dra. Romero, Valeria", "Dra. Castro, Elena"], 
+"traumatologia": ["Dr. Ramos, Sergio", "Dr. Herrera, Diego"], 
+"neurologia": ["Dr. Molina, Andres", "Dra. Vargas, Cecilia"] 
+};"
+
+respuesta:
+Ya localicé el objeto de especialidades y lo actualizo con los nombres exactos solicitados.
+
+no se hace cambios pero se hace una buena revisión.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
