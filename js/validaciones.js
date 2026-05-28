@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	const descEstudios = document.getElementById('descEstudios');
 
 	const medicosPorEspecialidad = {
-		'Clínica General': ['Dr. Carlos Ruiz','Dra. Marta López'],
-		'Cardiología': ['Dr. Martín Gómez','Dra. Elena Ríos'],
-		'Pediatría': ['Dra. Ana Pérez','Dr. Pablo Díaz'],
-		'Ginecología': ['Dra. Lucía Torres','Dra. Carla Méndez'],
-		'Traumatología': ['Dr. Juan Ramírez','Dr. Nicolás Vega'],
-		'Neurología': ['Dra. Sofía Álvarez','Dr. Andrés Molina']
+		'clinica': ['Dr. Gomez, Carlos', 'Dra. Lopez, Maria'],
+		'cardiologia': ['Dr. Perez, Juan', 'Dra. Torres, Ana'],
+		'pediatria': ['Dra. Diaz, Laura', 'Dr. Soto, Pablo'],
+		'ginecologia': ['Dra. Romero, Valeria', 'Dra. Castro, Elena'],
+		'traumatologia': ['Dr. Ramos, Sergio', 'Dr. Herrera, Diego'],
+		'neurologia': ['Dr. Molina, Andres', 'Dra. Vargas, Cecilia']
 	};
 
 	const nombre = document.getElementById('nombre');
