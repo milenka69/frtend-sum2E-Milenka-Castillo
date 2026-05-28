@@ -1,0 +1,66 @@
+/* Estilos específicos para la página turnos */
+
+/* Centrar y espaciar el formulario (redundancia segura con styles.css) */
+.contact-form{max-width:800px;margin:18px auto;padding:0 12px}
+
+/* Fieldset como tarjetas: usar grid para distribución limpia */
+.contact-form fieldset{
+  display:grid;
+  gap:10px;
+  grid-template-columns:repeat(2,1fr);
+}
+.contact-form fieldset legend{font-size:1.05rem}
+
+/* En pantallas pequeñas, una sola columna */
+@media (max-width:700px){
+  .contact-form fieldset{grid-template-columns:1fr}
+}
+
+/* Inputs ocupan toda la celda */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form input[type="date"],
+.contact-form input[type="time"],
+.contact-form select,
+.contact-form textarea{
+  min-height:40px;
+}
+
+/* Mejor separación para checkbox/labels que contienen inputs */
+.contact-form .checkbox-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  grid-column:1 / -1;
+  padding:12px 14px;
+  background:#f5fbff;
+  border:1px solid #d9ebf5;
+  border-radius:8px;
+}
+
+.contact-form .full-width{
+  grid-column:1 / -1;
+}
+
+/* Asegurar que los elementos ocultos usen display:none */
+.hidden{display:none !important}
+
+/* Estilos para botones */
+.contact-form .btn-primary{padding:10px 16px}
+.contact-form .btn-secondary{padding:10px 12px}
+
+/* Mejorar legibilidad del area de texto */
+.contact-form textarea{min-height:60px}
+
+/* Estilos visuales para elementos disabled */
+.disabled{opacity:0.6}
+
+/* Arreglar alineación del grupo final de botones */
+.contact-form .form-actions{display:flex;gap:12px;justify-content:flex-start;margin-top:12px}
+
+/* Ajustes de foco adicionales */
+.contact-form select:focus, .contact-form textarea:focus{box-shadow:0 0 0 4px rgba(3,105,161,0.06)}
+
+/* Espaciado superior para la página turnos */
+.turnos-main{padding-top:40px}

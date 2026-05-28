@@ -6,6 +6,7 @@
   <title>Solicitar Turno — SaludPlus</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/turnos.css">
 </head>
 <body>
   <header class="site-header">
@@ -21,172 +22,138 @@
     </div>
   </header>
 
-  <main class="section container" style="padding-top:40px">
+  <main class="section container turnos-main">
     <h1>Solicitar Turno</h1>
     <p class="section-sub">Complete el formulario y nos comunicaremos para confirmar su turno.</p>
 
     <form id="turnoForm" class="contact-form" action="#" method="post">
       <fieldset>
         <legend>Sección 1: Datos del Paciente</legend>
-        <label>
-          Nombre
-          <input type="text" name="nombre" id="nombre" required>
-        </label>
-        <label>
-          Apellido
-          <input type="text" name="apellido" id="apellido" required>
-        </label>
-        <label>
-          DNI
-          <input type="text" name="dni" id="dni" required>
-        </label>
-        <label>
-          Correo electrónico
-          <input type="email" name="email" id="email" required>
-        </label>
-        <label>
-          Teléfono
-          <input type="tel" name="telefono" id="telefono" required>
-        </label>
-        <label>
-          Fecha de nacimiento
-          <input type="date" name="nacimiento" id="nacimiento" required>
-        </label>
-        <label>
-          Género
-          <select name="genero" id="genero" required>
-            <option value="">Seleccione...</option>
-            <option>Masculino</option>
-            <option>Femenino</option>
-            <option>Otro</option>
-            <option>Prefiero no especificar</option>
-          </select>
-        </label>
+        <label for="nombre">Nombre</label>
+        <input placeholder="Nombre" type="text" name="nombre" id="nombre" required>
+
+        <label for="apellido">Apellido</label>
+        <input placeholder="Apellido" type="text" name="apellido" id="apellido" required>
+
+        <label for="dni">DNI</label>
+        <input placeholder="Número de documento" type="text" name="dni" id="dni" required>
+
+        <label for="email">Correo electrónico</label>
+        <input placeholder="nombre@ejemplo.com" type="email" name="email" id="email" required>
+
+        <label for="telefono">Teléfono</label>
+        <input placeholder="(011) 1234-5678" type="tel" name="telefono" id="telefono" required>
+
+        <label for="nacimiento">Fecha de nacimiento</label>
+        <input type="date" name="nacimiento" id="nacimiento" required>
+
+        <label for="genero">Género</label>
+        <select name="genero" id="genero" required>
+          <option value="">Seleccione...</option>
+          <option>Masculino</option>
+          <option>Femenino</option>
+          <option>Otro</option>
+          <option>Prefiero no especificar</option>
+        </select>
       </fieldset>
 
       <fieldset>
         <legend>Sección 2: Datos del Turno</legend>
-        <label>
-          Especialidad
-          <select name="especialidad" id="especialidad" required>
-            <option value="">Seleccione...</option>
-            <option>Clínica General</option>
-            <option>Cardiología</option>
-            <option>Pediatría</option>
-            <option>Ginecología</option>
-            <option>Traumatología</option>
-            <option>Neurología</option>
-          </select>
-        </label>
+        <label for="especialidad">Especialidad</label>
+        <select name="especialidad" id="especialidad" required>
+          <option value="">Seleccione...</option>
+          <option>Clínica General</option>
+          <option>Cardiología</option>
+          <option>Pediatría</option>
+          <option>Ginecología</option>
+          <option>Traumatología</option>
+          <option>Neurología</option>
+        </select>
 
-        <label>
-          Médico
-          <select name="medico" id="medico" disabled required>
-            <option value="">Seleccione especialidad primero</option>
-          </select>
-        </label>
+        <label for="medico">Médico</label>
+        <select name="medico" id="medico" disabled required>
+          <option value="">Seleccione especialidad primero</option>
+        </select>
 
-        <label>
-          Tipo de consulta
-          <select name="tipoConsulta" id="tipoConsulta" required>
-            <option value="">Seleccione...</option>
-            <option>Primera consulta</option>
-            <option>Control</option>
-            <option>Resultado de estudios</option>
-          </select>
-        </label>
+        <label for="tipoConsulta">Tipo de consulta</label>
+        <select name="tipoConsulta" id="tipoConsulta" required>
+          <option value="">Seleccione...</option>
+          <option>Primera consulta</option>
+          <option>Control</option>
+          <option>Resultado de estudios</option>
+        </select>
 
-        <label>
-          Fecha del turno
-          <input type="date" name="fechaTurno" id="fechaTurno" required>
-        </label>
+        <label for="fechaTurno">Fecha del turno</label>
+        <input type="date" name="fechaTurno" id="fechaTurno" required>
 
-        <label>
-          Hora del turno
-          <input type="time" name="horaTurno" id="horaTurno" required>
-        </label>
+        <label for="horaTurno">Hora del turno</label>
+        <input type="time" name="horaTurno" id="horaTurno" required>
 
-        <label>
-          Modalidad
-          <select name="modalidad" id="modalidad" required>
-            <option value="">Seleccione...</option>
-            <option>Presencial</option>
-            <option>Videoconsulta</option>
-          </select>
-        </label>
+        <label for="modalidad">Modalidad</label>
+        <select name="modalidad" id="modalidad" required>
+          <option value="">Seleccione...</option>
+          <option>Presencial</option>
+          <option>Videoconsulta</option>
+        </select>
 
-        <label id="plataformaLabel" style="display:none">
-          Plataforma preferida
-          <select name="plataforma" id="plataforma">
-            <option value="">Seleccione...</option>
-            <option>Zoom</option>
-            <option>Google Meet</option>
-            <option>Teams</option>
-          </select>
-        </label>
+        <label for="plataforma" id="plataformaLabel" class="hidden">Plataforma preferida</label>
+        <select name="plataforma" id="plataforma" class="hidden" disabled>
+          <option value="">Seleccione...</option>
+          <option>Zoom</option>
+          <option>Google Meet</option>
+          <option>Teams</option>
+        </select>
       </fieldset>
 
       <fieldset>
         <legend>Sección 3: Cobertura Médica</legend>
-        <label>
-          Cobertura
-          <select name="cobertura" id="cobertura" required>
-            <option value="">Seleccione...</option>
-            <option>OSDE</option>
-            <option>Swiss Medical</option>
-            <option>Galeno</option>
-            <option>IOMA</option>
-            <option>Medicus</option>
-            <option>Sancor Salud</option>
-            <option>Particular</option>
-          </select>
-        </label>
+        <label for="cobertura">Cobertura</label>
+        <select name="cobertura" id="cobertura" required>
+          <option value="">Seleccione...</option>
+          <option>OSDE</option>
+          <option>Swiss Medical</option>
+          <option>Galeno</option>
+          <option>IOMA</option>
+          <option>Medicus</option>
+          <option>Sancor Salud</option>
+          <option>Particular</option>
+        </select>
 
-        <label id="credencialLabel" style="display:none">
-          Número de credencial
-          <input type="text" name="numeroCredencial" id="numeroCredencial">
-        </label>
+        <label for="numeroCredencial" id="credencialLabel" class="hidden">Número de credencial</label>
+        <input placeholder="Número de credencial" type="text" name="numeroCredencial" id="numeroCredencial" class="hidden" disabled>
 
-        <label id="planLabel" style="display:none">
-          Plan
-          <input type="text" name="plan" id="plan">
-        </label>
+        <label for="plan" id="planLabel" class="hidden">Plan</label>
+        <input placeholder="Nombre del plan" type="text" name="plan" id="plan" class="hidden" disabled>
       </fieldset>
       <fieldset>
         <legend>Sección 4: Información Adicional</legend>
-        <label>
+        <label for="primeraVisita" class="checkbox-row">
           <input type="checkbox" id="primeraVisita" name="primeraVisita">
           Es la primera vez que consulta en SaludPlus
         </label>
 
-        <label id="conocioLabel" style="display:none">
-          ¿Cómo nos conoció?
-          <select id="conocio" name="conocio">
-            <option value="">Seleccione...</option>
-            <option>Búsqueda en internet</option>
-            <option>Recomendación de un conocido</option>
-            <option>Redes sociales</option>
-            <option>Otro</option>
-          </select>
-        </label>
+        <label for="conocio" id="conocioLabel" class="hidden full-width">¿Cómo nos conoció?</label>
+        <select id="conocio" name="conocio" class="hidden full-width" disabled>
+          <option value="">Seleccione...</option>
+          <option>Búsqueda en internet</option>
+          <option>Recomendación de un conocido</option>
+          <option>Redes sociales</option>
+          <option>Otro</option>
+        </select>
 
-        <label>
-          Motivo de consulta
-          <textarea name="motivo" id="motivo" rows="4" required></textarea>
-        </label>
+        <label for="motivo" class="full-width">Motivo de consulta</label>
+        <textarea placeholder="Describa brevemente el motivo de la consulta" name="motivo" id="motivo" rows="4" required class="full-width"></textarea>
 
-        <label>
+        <label for="estudiosPrevios" class="checkbox-row">
           <input type="checkbox" id="estudiosPrevios" name="estudiosPrevios">
           Tiene estudios previos relacionados con la consulta
         </label>
 
-        <label id="descEstudiosLabel" style="display:none">
-          Descripción de estudios
-          <textarea id="descEstudios" name="descEstudios" rows="3"></textarea>
-        </label>
+        <label for="descEstudios" id="descEstudiosLabel" class="hidden full-width">Descripción de estudios</label>
+        <textarea id="descEstudios" name="descEstudios" rows="3" class="hidden full-width" disabled placeholder="Resumen de estudios realizados"></textarea>
       </fieldset>
 
-      <div style="margin-top:12px;display:flex;gap:12px">
+      <div class="form-actions">
         <button type="submit" class="btn-primary">Solicitar Turno</button>
         <button type="reset" class="btn-secondary" id="limpiarBtn">Limpiar formulario</button>
       </div>
@@ -198,5 +165,6 @@
       <small>© 2026 SaludPlus — Centro de Salud.</small>
     </div>
   </footer>
+  <script src="js/validaciones.js"></script>
 </body>
 </html>

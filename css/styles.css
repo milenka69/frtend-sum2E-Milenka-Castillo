@@ -64,7 +64,15 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;back
 
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .map-placeholder{background:linear-gradient(135deg,#eef2f7,#e6f6f8);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);min-height:160px}
-.contact-form{display:grid;gap:10px}
+.contact-form{display:grid;gap:10px;max-width:800px;margin:0 auto}
+.contact-form fieldset{border:1px solid #e6eef2;background:#ffffff;padding:16px;border-radius:10px;margin-bottom:16px}
+.contact-form legend{font-weight:600;padding:0 8px}
+.hidden{display:none}
+.disabled{opacity:0.6}
+.contact-form label{display:block;margin-top:10px;font-size:0.95rem}
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form input[type="date"], .contact-form input[type="time"], .contact-form select, .contact-form textarea{width:100%;padding:10px;border:1px solid #e6eef2;border-radius:8px;background:transparent}
+.contact-form input[type="text"]:focus, .contact-form input[type="email"]:focus, .contact-form input[type="tel"]:focus, .contact-form input[type="date"]:focus, .contact-form input[type="time"]:focus, .contact-form select:focus, .contact-form textarea:focus{outline:none;box-shadow:0 0 0 4px rgba(3,105,161,0.08);border-color:var(--accent-2)}
+.contact-form input[type="text"]:hover, .contact-form input[type="email"]:hover, .contact-form input[type="tel"]:hover, .contact-form select:hover, .contact-form textarea:hover{border-color:#cfeff8}
 .contact-form input,.contact-form textarea{width:100%;padding:10px;border:1px solid #e6eef2;border-radius:8px}
 .btn-secondary{background:#fff;border:1px solid var(--accent-2);color:var(--accent-2);padding:10px 14px;border-radius:8px}
 

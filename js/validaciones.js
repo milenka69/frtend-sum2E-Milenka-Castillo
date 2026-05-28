@@ -26,13 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
 		medico.appendChild(new Option('Seleccione médico...',''));
 		medico.value = '';
 		medico.disabled = true;
+		medico.classList.add('disabled');
 	}
 
 	function populateMedicos(especial) {
 		clearMedicos();
 		const lista = medicosPorEspecialidad[especial] || [];
 		lista.forEach(name => medico.appendChild(new Option(name,name)));
-		if (lista.length) medico.disabled = false;
+		if (lista.length) {
+			medico.disabled = false;
+			medico.classList.remove('disabled');
+		}
 	}
 
 	especialidad.addEventListener('change', function () {
@@ -45,59 +49,86 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 
 	modalidad.addEventListener('change', function () {
+		const plt = document.getElementById('plataforma');
 		if (modalidad.value === 'Videoconsulta') {
-			plataformaLabel.style.display = '';
-			document.getElementById('plataforma').setAttribute('required','');
+			plataformaLabel.classList.remove('hidden');
+			plt.classList.remove('hidden');
+			plt.disabled = false;
+			plt.setAttribute('required','');
 		} else {
-			plataformaLabel.style.display = 'none';
-			document.getElementById('plataforma').removeAttribute('required');
-			document.getElementById('plataforma').value = '';
+			plataformaLabel.classList.add('hidden');
+			plt.classList.add('hidden');
+			plt.removeAttribute('required');
+			plt.value = '';
+			plt.disabled = true;
 		}
 	});
 
 	cobertura.addEventListener('change', function () {
+		const num = document.getElementById('numeroCredencial');
+		const pl = document.getElementById('plan');
 		if (cobertura.value && cobertura.value !== 'Particular') {
-			credencialLabel.style.display = '';
-			planLabel.style.display = '';
-			document.getElementById('numeroCredencial').setAttribute('required','');
-			document.getElementById('plan').setAttribute('required','');
+			credencialLabel.classList.remove('hidden');
+			num.classList.remove('hidden');
+			num.disabled = false;
+			num.setAttribute('required','');
+			planLabel.classList.remove('hidden');
+			pl.classList.remove('hidden');
+			pl.disabled = false;
+			pl.setAttribute('required','');
 		} else {
-			credencialLabel.style.display = 'none';
-			planLabel.style.display = 'none';
-			document.getElementById('numeroCredencial').removeAttribute('required');
-			document.getElementById('numeroCredencial').value = '';
-			document.getElementById('plan').removeAttribute('required');
-			document.getElementById('plan').value = '';
+			credencialLabel.classList.add('hidden');
+			num.classList.add('hidden');
+			num.removeAttribute('required');
+			num.value = '';
+			num.disabled = true;
+			planLabel.classList.add('hidden');
+			pl.classList.add('hidden');
+			pl.removeAttribute('required');
+			pl.value = '';
+			pl.disabled = true;
 		}
 	});
 
 	// Initial state
 	clearMedicos();
-	plataformaLabel.style.display = 'none';
-	credencialLabel.style.display = 'none';
-	planLabel.style.display = 'none';
+	plataformaLabel.classList.add('hidden');
+	document.getElementById('plataforma').classList.add('hidden');
+	document.getElementById('plataforma').disabled = true;
+	credencialLabel.classList.add('hidden');
+	document.getElementById('numeroCredencial').classList.add('hidden');
+	document.getElementById('numeroCredencial').disabled = true;
+	planLabel.classList.add('hidden');
+	document.getElementById('plan').classList.add('hidden');
+	document.getElementById('plan').disabled = true;
 
 	// Primera visita / Cómo nos conoció
 	primeraVisita.addEventListener('change', function () {
+		const conocio = document.getElementById('conocio');
 		if (primeraVisita.checked) {
-			conocioLabel.style.display = '';
-			document.getElementById('conocio').setAttribute('required','');
+			conocioLabel.classList.remove('hidden');
+			conocio.disabled = false;
+			conocio.setAttribute('required','');
 		} else {
-			conocioLabel.style.display = 'none';
-			document.getElementById('conocio').removeAttribute('required');
-			document.getElementById('conocio').value = '';
+			conocioLabel.classList.add('hidden');
+			conocio.removeAttribute('required');
+			conocio.value = '';
+			conocio.disabled = true;
 		}
 	});
 
 	// Estudios previos
 	estudiosPrevios.addEventListener('change', function () {
+		const desc = document.getElementById('descEstudios');
 		if (estudiosPrevios.checked) {
-			descEstudiosLabel.style.display = '';
-			document.getElementById('descEstudios').setAttribute('required','');
+			descEstudiosLabel.classList.remove('hidden');
+			desc.disabled = false;
+			desc.setAttribute('required','');
 		} else {
-			descEstudiosLabel.style.display = 'none';
-			document.getElementById('descEstudios').removeAttribute('required');
-			document.getElementById('descEstudios').value = '';
+			descEstudiosLabel.classList.add('hidden');
+			desc.removeAttribute('required');
+			desc.value = '';
+			desc.disabled = true;
 		}
 	});
 
@@ -116,11 +147,21 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Reset handler to restore initial UI state
 	function resetState() {
 		clearMedicos();
-		plataformaLabel.style.display = 'none';
-		credencialLabel.style.display = 'none';
-		planLabel.style.display = 'none';
-		conocioLabel.style.display = 'none';
-		descEstudiosLabel.style.display = 'none';
+		plataformaLabel.classList.add('hidden');
+		document.getElementById('plataforma').classList.add('hidden');
+		document.getElementById('plataforma').disabled = true;
+		credencialLabel.classList.add('hidden');
+		document.getElementById('numeroCredencial').classList.add('hidden');
+		document.getElementById('numeroCredencial').disabled = true;
+		planLabel.classList.add('hidden');
+		document.getElementById('plan').classList.add('hidden');
+		document.getElementById('plan').disabled = true;
+		conocioLabel.classList.add('hidden');
+		document.getElementById('conocio').classList.add('hidden');
+		document.getElementById('conocio').disabled = true;
+		descEstudiosLabel.classList.add('hidden');
+		document.getElementById('descEstudios').classList.add('hidden');
+		document.getElementById('descEstudios').disabled = true;
 		// remove required attributes that may have been set
 		document.getElementById('plataforma').removeAttribute('required');
 		document.getElementById('numeroCredencial').removeAttribute('required');
