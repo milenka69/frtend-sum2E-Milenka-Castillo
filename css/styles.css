@@ -41,18 +41,29 @@ html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;back
 .section-sub{margin:0 0 18px 0;color:var(--muted)}
 
 .grid{display:grid;gap:16px}
-.specialties{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.specialties{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+@media (min-width:1024px){
+	.specialties{grid-template-columns:repeat(3,1fr)}
+}
+.spec-card{display:flex;flex-direction:column;align-items:flex-start}
+.spec-icon{width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.spec-icon img{width:64px;height:64px;border-radius:8px;display:block}
 .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.06)}
 
-.team{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-.team-card{background:var(--card);padding:14px;border-radius:12px;text-align:center}
-.team-card img{width:100%;height:auto;border-radius:8px}
-.team-card figcaption{margin-top:10px;color:var(--muted)}
+.team{display:flex;gap:18px;flex-wrap:wrap;align-items:stretch}
+.team-card{background:var(--card);padding:14px;border-radius:12px;display:flex;gap:12px;align-items:flex-start;flex:1 1 280px;min-width:220px}
+.team-photo{width:100px;height:100px;border-radius:8px;background:linear-gradient(135deg,#e6eef2,#fff);flex-shrink:0}
+.team-info{display:block}
+.team-info strong{display:block}
+.team-info .muted{color:var(--muted);font-size:0.95rem}
+.team-info p{margin:8px 0 0 0;color:var(--muted)}
 
 .insurers{display:flex;flex-wrap:wrap;gap:12px;list-style:none;padding:0;margin:12px 0}
 .insurers li{background:var(--card);padding:10px 14px;border-radius:8px;box-shadow:0 4px 10px rgba(15,23,42,0.04)}
 
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.map-placeholder{background:linear-gradient(135deg,#eef2f7,#e6f6f8);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);min-height:160px}
 .contact-form{display:grid;gap:10px}
 .contact-form input,.contact-form textarea{width:100%;padding:10px;border:1px solid #e6eef2;border-radius:8px}
 .btn-secondary{background:#fff;border:1px solid var(--accent-2);color:var(--accent-2);padding:10px 14px;border-radius:8px}
